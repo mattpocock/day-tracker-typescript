@@ -1,8 +1,6 @@
 {
-  "name": "gatsby-starter-typescript",
-  "description": "Gatsby TypeScript starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "day-tracker",
+  "description": "Day Tracker app",
   "dependencies": {
     "@material-ui/core": "^3.9.1",
     "@types/moment": "^2.13.0",
@@ -16,6 +14,8 @@
     "formik": "^1.4.2",
     "gatsby": "latest",
     "gatsby-link": "latest",
+    "gatsby-plugin-manifest": "^2.0.13",
+    "gatsby-plugin-offline": "^2.0.21",
     "gatsby-plugin-react-helmet": "latest",
     "gatsby-plugin-styled-components": "latest",
     "gatsby-plugin-typescript": "latest",
@@ -35,8 +35,6 @@
   "keywords": [
     "gatsby, typescript"
   ],
-  "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
@@ -46,9 +44,5 @@
   "devDependencies": {
     "@types/react-redux": "^7.0.1",
     "prettier": "^1.8.2"
-  },
-  "contributors": [
-    "fabien0102 <fabien0102@gmail.com>",
-    "Hays Clark <hays.clark@gmail.com>"
-  ]
+  }
 }
