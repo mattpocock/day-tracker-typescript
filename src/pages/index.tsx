@@ -12,7 +12,7 @@ import Frequency from '../types/Frequency';
 import { ADD_MARK, REMOVE_MARK_BY_ID } from '../reducers/marks';
 import ActivityWrapper from '../components/ActivityWrapper';
 import { REMOVE_TRACK_BY_ID } from '../reducers/tracks';
-import { Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { MdDelete } from 'react-icons/md';
 import Button from '@material-ui/core/Button';
@@ -32,8 +32,8 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
         <Row>
           {tracks.map(({ name, id, frequency, color }) => {
             return (
-              <React.Fragment key={id}>
-                <ActivityWrapper xs={12} md={6}>
+              <Col xs={12} md={6} key={id}>
+                <ActivityWrapper>
                   <div style={{ minWidth: '25%' }}>
                     <TrackTitle>{name}</TrackTitle>
                   </div>
@@ -62,7 +62,10 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
                                 } else {
                                   dispatch({
                                     type: ADD_MARK,
-                                    payload: { time: start + 10, trackId: id },
+                                    payload: {
+                                      time: start + 10,
+                                      trackId: id,
+                                    },
                                   });
                                 }
                               }}
@@ -71,21 +74,21 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
                         })
                         .reverse()}
                     </PointsWrapper>
+                    <div>
+                      <Button
+                        onClick={() =>
+                          dispatch({
+                            type: REMOVE_TRACK_BY_ID,
+                            payload: { id },
+                          })
+                        }
+                      >
+                        <StyledMdDelete />
+                      </Button>
+                    </div>
                   </EvenHeightColumn>
-                  <div>
-                    <Button
-                      onClick={() =>
-                        dispatch({
-                          type: REMOVE_TRACK_BY_ID,
-                          payload: { id },
-                        })
-                      }
-                    >
-                      <StyledMdDelete />
-                    </Button>
-                  </div>
                 </ActivityWrapper>
-              </React.Fragment>
+              </Col>
             );
           })}
         </Row>
@@ -108,6 +111,8 @@ export default connect((state: GlobalState) => ({
 
 const EvenHeightColumn = styled.div`
   flex-grow: 1;
+  display: flex;
+  align-items: center;
 `;
 
 const StyledMdDelete = styled(MdDelete)`
