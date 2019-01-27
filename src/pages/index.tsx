@@ -76,6 +76,7 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
                     </PointsWrapper>
                     <div>
                       <Button
+                        style={{ minWidth: '2rem' }}
                         onClick={() =>
                           dispatch({
                             type: REMOVE_TRACK_BY_ID,
