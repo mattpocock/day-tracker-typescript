@@ -8,6 +8,7 @@ interface ThemeProviderProps {
 const theme = createMuiTheme({
   typography: {
     fontFamily: 'Montserrat',
+    fontSize: 16,
   },
   palette: {
     primary: {
