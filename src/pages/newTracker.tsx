@@ -52,7 +52,6 @@ class NewTracker extends React.Component<IndexPageProps, {}> {
                   <FormControl error={errors.name && touched.name} fullWidth>
                     <InputLabel>Name</InputLabel>
                     <Input
-                      style={{ fontSize: '2rem' }}
                       name="name"
                       type="text"
                       value={values.name}
@@ -68,7 +67,6 @@ class NewTracker extends React.Component<IndexPageProps, {}> {
                   <FormControl fullWidth>
                     <InputLabel>Frequency</InputLabel>
                     <Select
-                      style={{ fontSize: '2rem' }}
                       native
                       name="frequency"
                       onChange={handleChange}
@@ -87,7 +85,6 @@ class NewTracker extends React.Component<IndexPageProps, {}> {
                   <FormControl fullWidth>
                     <InputLabel>Color</InputLabel>
                     <Select
-                      style={{ fontSize: '2rem' }}
                       native
                       name="color"
                       onChange={handleChange}
@@ -115,7 +112,7 @@ class NewTracker extends React.Component<IndexPageProps, {}> {
                     type="button"
                     onClick={() => navigate('/')}
                     size="large"
-                    style={{ margin: '1rem', fontSize: '1.5rem' }}
+                    style={{ margin: '1rem' }}
                   >
                     Cancel
                   </Button>
@@ -124,7 +121,7 @@ class NewTracker extends React.Component<IndexPageProps, {}> {
                     disabled={!isValid}
                     onClick={() => handleSubmit()}
                     size="large"
-                    style={{ margin: '1rem', fontSize: '1.5rem' }}
+                    style={{ margin: '1rem' }}
                   >
                     Save
                   </Button>

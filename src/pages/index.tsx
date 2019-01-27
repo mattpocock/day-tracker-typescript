@@ -92,7 +92,7 @@ class IndexPage extends React.Component<IndexPageProps, {}> {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Link to="/newTracker" style={{ textDecoration: 'none' }}>
             <Button size="large">
-              <span style={{ fontSize: '1.4rem' }}>New Track</span>
+              <span>New Track</span>
             </Button>
           </Link>
         </div>
